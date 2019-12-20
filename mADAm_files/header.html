@@ -1,0 +1,96 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="display:none">
+    <div class="container big_container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#home">{{ site.title }}</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">  
+            	<li>
+                    <a class="page-scroll" href="#about">Initial Description</a>
+                </li>            
+                <li>
+                    <a class="page-scroll" href="#first_section">The situation so far</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#second_section">Europe to the rescue</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#third_section">Our solution</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#fourth_section">Conclusion</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#fifth_section">Appedix</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+{% comment %} <section id="home"> {% endcomment %}
+<!-- Header -->
+<div class="intro-header" style="height:100%;">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-message">
+						{% comment %} <h1>{{ page.title }}</h1> {{ page.subTitle }}{% endcomment %}
+                        <h1>Solving hunger in Africa</h1>
+						<h2>A modeled approach to solve this chronic issue</h2>
+						<hr class="intro-divider">
+						<ul class="list-inline intro-social-buttons">
+							{% for social in site.social %}
+							<li>
+                                <a href="#about" class="page-scroll btn btn-default btn-xlarge"><span class="network-name">Let's see how we can help them NOW!</span></a>
+								{% comment %} <a href="{{ social.url }}" class="btn btn-default btn-lg"><i class="fa fa-{{ social.title }} fa-fw"></i> <span class="network-name">{{ social.title }}</span></a> {% endcomment %}
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+    {% comment %} <div id="header-div"></div> {% endcomment %}
+
+	<!-- /.intro-header -->
+{% comment %} </section> {% endcomment %}
+
+<script>
+(function ($) {
+  $(document).ready(function(){
+
+    // hide .navbar first
+    $(".navbar").hide();
+
+    // fade in .navbar
+    $(function () {
+        $(window).scroll(function () {
+
+                 // set distance user needs to scroll before we start fadeIn
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').fadeIn();
+            } else {
+                $('.navbar').fadeOut();
+            }
+        });
+    });
+
+});
+  }(jQuery));</script>

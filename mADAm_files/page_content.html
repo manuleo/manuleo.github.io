@@ -1,0 +1,47 @@
+<section id="services" style="text-align: justify;">
+<!-- Page Content -->
+{% for post in site.posts reversed %}
+  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    {% if thecycle == 'odd' %}
+    <div class="content-section-a" id="{{ post.id_div }}">
+
+        <div class="container big_container">
+
+            <div class="row">
+                    <div class="col-sm-12 col-md-2"></div>
+                    <div class="col-sm-12 col-md-10" style="padding-left: 0px;">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h1 class="section-heading">{{ post.title }}</h1>
+                    </div>
+                    <div class="lead">{{ post.content }}</div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+    {% else %}
+
+    <div class="content-section-b" id="{{ post.id_div }}">
+
+        <div class="container big_container">
+
+            <div class="row">
+                    <div class="col-sm-12 col-md-2"></div>
+                    <div class="col-sm-12 col-md-10" style="padding-left: 0px;">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h1 class="section-heading">{{ post.title }}</h1>
+                    </div>
+                    <div class="lead">{{ post.content }}</div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+    {% endif %}
+{% endfor %}
+</section>
